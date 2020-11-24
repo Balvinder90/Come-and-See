@@ -1,5 +1,5 @@
 # Come-and-See
-A website based on the fillm "Come and See" created using advanced CSS techniques and the BEM convention.
+A website based on the film "Come and See" created using advanced CSS techniques and the BEM convention.
 
 1. Advanced CSS grid techniques
 2. Advanced responsive techniques 
