@@ -1,0 +1,60 @@
+.film {
+  &__composition {
+    &__img--1,
+    &__img--2,
+    &__img--3 {
+      position: absolute;
+      width: 10rem;
+      height: 10rem;
+      @include transition;
+
+      @include respond(smallest) {
+        width: 8rem;
+        height: 8rem;
+      }
+
+      @include respond(big-desktop) {
+        width: 11rem;
+        height: 11rem;
+      }
+    }
+
+    &__img--1 {
+      top: 1rem;
+      left: 1rem;
+      @include respond(big-desktop) {
+        top: 1rem;
+        left: 5rem;
+      }
+    }
+
+    &__img--2 {
+      top: 9rem;
+      left: 11rem;
+      transition-delay: 0.5s;
+      @include respond(big-desktop) {
+        top: 9rem;
+        left: 16rem;
+      }
+    }
+
+    &__img--3 {
+      top: 13rem;
+      transition-delay: 1s;
+      @include respond(big-desktop) {
+        top: 14rem;
+        left: 4rem;
+      }
+    }
+
+    &__img--1,
+    &__img--2,
+    &__img--3 {
+      @include respond(large) {
+        position: relative;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+.cast {
+  &:hover .heading-primary {
+    @include filter;
+  }
+
+  &__actor {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    column-gap: 2rem;
+    align-items: center;
+
+    &:hover > img {
+      @include filter;
+    }
+
+    &:hover .cast__link:link::before {
+      width: 100%;
+    }
+
+    &:hover .cast__link:link {
+      color: $color-grey-dark;
+    }
+
+    @media only screen and (hover:none) {
+       .cast__link:link {
+         padding-bottom: .5rem;
+        border-bottom: .1rem solid $color-primary;
+      }
+     
+    }
+  }
+
+  &__image {
+    width: 8rem;
+    height: 8rem;
+    @include transition;
+  }
+
+  &__link:link {
+    position: relative;
+    text-decoration: none;
+    color: $color-primary;
+    padding: 0.5rem;
+    z-index: 10;
+    @include transition;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 0;
+      background-color: $color-tertiary;
+      @include transition;
+      z-index: -10;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 1rem = 10px | 10/16*100 = 62.5%
+
+  @include respond(medium) {
+    font-size: 60%; // 1rem = 9.6px
+  }
+
+  @include respond(big-desktop) {
+    font-size: 70%; // 1rem = 11.2px
+  }
+
+}
+
+body {
+  background-color: $color-grey-dark;
+  color: $color-primary;
+  line-height: 1.6;
+}
+
+// OVERALL GRID CONTAINER CLASS
+.container {
+  display: grid;
+  grid-template-rows: 100vh repeat(6, min-content);
+  row-gap: 6.5rem;
+  grid-template-columns:
+    minmax(6rem, 1fr) [full-start] repeat(
+      8,
+      [col-start] minmax(min-content, 14rem) [col-end]
+    )
+    [full-end] minmax(6rem, 1fr);
+
+  @include respond(tiny) {
+    grid-template-columns:
+      minmax(1.5rem, 1fr) [full-start] repeat(
+        8,
+        [col-start] minmax(min-content, 14rem) [col-end]
+      )
+      [full-end] minmax(1.5rem, 1fr);
+  }
+
+  @include respond(big-desktop) {
+    grid-template-columns:
+      minmax(6rem, 1fr) [full-start] repeat(
+        8,
+        [col-start] minmax(min-content, 20rem) [col-end]
+      )
+      [full-end] minmax(6rem, 1fr);
+  }
+
+}

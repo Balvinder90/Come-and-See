@@ -1,0 +1,17 @@
+.social {
+  a:link {
+    color: $color-primary;
+    font-size: 1.8rem;
+    @include transition;
+    @include respond (smallest) {
+      font-size: 1.6rem;
+    }
+    @include respond (tiny) {
+      font-size: 1.8rem;
+    }
+    cursor: pointer;
+    &:hover {
+      @include filter;
+    }
+  }
+}

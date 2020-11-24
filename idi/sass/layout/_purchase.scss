@@ -1,0 +1,16 @@
+.purchase {
+    grid-row: 6/7;
+    grid-column: 2/10;
+
+    &:hover .heading-primary {
+        @include filter;
+    }
+
+
+    &__buttons {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        justify-items: center;
+    }
+
+}

@@ -1,0 +1,48 @@
+@mixin transition {
+  transition: all 0.7s;
+}
+
+@mixin filter {
+  filter: brightness(135%);
+}
+
+@mixin rounded {
+  border-radius: 50%;
+  border: 2px solid $color-primary;
+}
+
+@mixin rounded-no-border {
+  border-radius: 50%;
+}
+
+/* 
+$breakpoint choices:
+- tiny
+- smallest
+- small
+- medium
+- large
+- big-desktop
+- 1em = 16px
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == tiny {
+    @media (max-width: 26.25em) {@content}; // 420PX
+  }
+  @if $breakpoint == smallest {
+    @media (max-width: 37.5em) {@content}; // 600PX
+  }
+  @if $breakpoint == small {
+    @media (max-width: 43.75em) {@content}; // 700PX
+  }
+  @if $breakpoint == medium {
+    @media (max-width: 48em) {@content}; // 768PX
+  }
+  @if $breakpoint == large {
+    @media (max-width: 61.875em) {@content}; // 990PX
+  }
+  @if $breakpoint == big-desktop {
+    @media (min-width: 87.5em) {@content}; // 1400PX
+  }
+}

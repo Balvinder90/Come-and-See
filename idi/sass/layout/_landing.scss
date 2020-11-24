@@ -1,0 +1,22 @@
+.landing {
+  background-image: url("../img/background-big-low.jpg");
+  background-size: 110%;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+  animation: pulse 12s linear infinite;
+  grid-row: 1/2;
+  grid-column: 1/-1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  @media (min-resolution: 192dpi) and (min-width: 37.5em),
+    (min-width: 87.5em) {
+      background-image: url("../img/background-big-high.jpg");
+    }
+
+
+  @include respond(smallest) {
+    background-image: url("../img/background-small.jpg");
+  }
+}

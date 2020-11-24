@@ -1,0 +1,20 @@
+.social {
+  @include respond(tiny) {
+    grid-row: 8/-1;
+    grid-column: 2/10;
+    display: grid;
+    justify-content: start;
+    justify-items: center;
+    align-content: start;
+    row-gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+    padding-bottom: 4rem;
+  }
+  grid-row: 2/3;
+  grid-column: 1/2;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  row-gap: 1rem;
+}

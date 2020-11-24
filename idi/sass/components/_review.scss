@@ -1,0 +1,13 @@
+.reviews {
+  &__user-image {
+    width: 5.5rem;
+    height: 5.5rem;
+    @include rounded;
+    @include transition;
+  }
+  &__icon {
+      font-size: 1.2rem;
+      color: $color-tertiary;
+      @include transition;
+  }
+}

@@ -1,0 +1,81 @@
+.reviews {
+  grid-row: 5/6;
+  grid-column: 2/10;
+
+  &:hover .heading-primary {
+    @include filter;
+  }
+
+  &__information {
+    display: grid;
+    grid-template-rows: min-content;
+    row-gap: 3rem;
+  }
+
+  &__review {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    gap: 0rem 2rem;
+
+    &:not(:last-child) {
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba($color-primary, 0.1);
+    }
+
+    @include respond(small) {
+      gap: 1rem 0rem;
+    }
+
+    &:hover .reviews__user-image {
+      transform: translateY(1rem);
+    }
+
+    &:hover .reviews__icon {
+      margin-right: 0.3rem;
+    }
+
+    &:hover .lighten {
+      @include filter;
+    }
+  }
+
+  &__user-image {
+    grid-row: 1/2;
+    grid-column: 1/2;
+
+    @include respond(small) {
+      grid-row: 1/2;
+      grid-column: 1/-1;
+    }
+  }
+
+  &__user-details {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    column-gap: 1rem;
+    grid-row: 1/2;
+    grid-column: 2/-1;
+
+    @include respond(small) {
+      grid-row: 2/3;
+      grid-column: 1/-1;
+    }
+  }
+
+  &__user-rating {
+    display: grid;
+    grid-template-columns: repeat(5, min-content);
+    column-gap: 0.5rem;
+  }
+
+  &__user-review {
+    grid-row: 2/3;
+    grid-column: 2/-1;
+
+    @include respond(small) {
+      grid-row: 3/4;
+      grid-column: 1/-1;
+    }
+  }
+}

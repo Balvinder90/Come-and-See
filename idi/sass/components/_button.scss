@@ -1,0 +1,79 @@
+.purchase {
+  &__button:link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 12.5rem;
+    width: 12.5rem;
+    text-decoration: none;
+    background-color: $color-grey-dark;
+    @include rounded-no-border;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 10;
+
+    @include respond(small) {
+      height: 10rem;
+      width: 10rem;
+    }
+
+    @include respond(tiny) {
+      height: 8rem;
+      width: 8rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 12rem;
+      left: -14rem;
+      background-color: $color-primary;
+      width: 14rem;
+      height: 14rem;
+      transform: rotate(45deg);
+      @include transition;
+      z-index: -10;
+
+      @include respond(small) {
+        height: 13rem;
+      }
+
+      @include respond(tiny) {
+        height: 12rem;
+      }
+
+      @media only screen and (hover: none) {
+        top: -1rem;
+        left: 0rem;
+      }
+    }
+
+    &:hover::before {
+      top: -1rem;
+      left: 0;
+    }
+
+    &:hover .purchase__icon {
+      color: $color-grey-dark;
+    }
+  }
+
+  &__icon {
+    font-size: 7rem;
+    color: $color-primary;
+    @include transition;
+
+    @include respond(small) {
+      font-size: 5rem;
+    }
+
+    @include respond(tiny) {
+      font-size: 4rem;
+    }
+
+    @media only screen and (hover: none) {
+      color: $color-grey-dark;
+    }
+  }
+}
