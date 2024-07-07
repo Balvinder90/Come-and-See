@@ -1,6 +1,8 @@
 # Come-and-See
 A website based on the film "Come and See" created using advanced CSS techniques, SASS and the BEM convention.
 
+## https://balvindersinghportfolio.netlify.app/sites/idi/
+
 1. Advanced CSS grid techniques
 2. SASS
 2. Advanced responsive techniques 
